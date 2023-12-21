@@ -19,6 +19,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: Colors.green[700],
           // currentIndex: _currentIndex,
           // onTap: _onItemTapped,
           items: [
@@ -27,12 +29,16 @@ class _HomeState extends State<Home> {
               label: 'Home',
             ),
             BottomNavigationBarItem(
+              icon: Icon(Icons.assignment),
+              label: 'Order Saya',
+            ),
+            BottomNavigationBarItem(
               icon: Icon(Icons.search),
-              label: 'Search',
+              label: 'Lacak',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
-              label: 'Profile',
+              label: 'Akun',
             ),
           ]),
       body: Padding(
