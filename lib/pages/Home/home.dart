@@ -1,5 +1,6 @@
 import 'package:cargo_app/pages/Home/four_icons.dart';
 import 'package:cargo_app/pages/Home/one_icons.dart';
+import 'package:cargo_app/pages/Home/order_promo.dart';
 import 'package:cargo_app/pages/Home/promo_list.dart';
 import 'package:cargo_app/pages/Home/promo_login.dart';
 import 'package:cargo_app/pages/Home/search_bar.dart';
@@ -31,7 +32,7 @@ class _HomeState extends State<Home> {
               label: 'Order Saya',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
+              icon: Icon(Icons.location_on),
               label: 'Lacak',
             ),
             BottomNavigationBarItem(
@@ -52,13 +53,16 @@ class _HomeState extends State<Home> {
                         topLeft: Radius.circular(12),
                         topRight: Radius.circular(12))),
                 width: double.maxFinite,
-                // padding: EdgeInsets.symmetric(vertical: 12),
                 child: ListView(
                   children: [
                     PromoLogin(),
                     FourIcons(),
                     OneIcons(),
-                    PromoList()
+                    PromoList(),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    OrderPromo(),
                   ],
                 ),
               ),

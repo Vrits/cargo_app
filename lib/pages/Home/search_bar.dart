@@ -12,12 +12,11 @@ class SearchItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
-            flex: 9,
+            flex: 8,
             child: Container(
               decoration: BoxDecoration(
                 color: const Color.fromARGB(35, 0, 0, 0),
                 borderRadius: BorderRadius.all(Radius.circular(8)),
-                // color: Colors.black,
               ),
               padding: EdgeInsets.all(6),
               child: Row(
@@ -30,15 +29,27 @@ class SearchItem extends StatelessWidget {
                         Icons.search,
                         color: Color.fromRGBO(245, 245, 245, 1),
                       ),
-                      SizedBox(
-                        width: 8,
-                      ),
+                      // Container(
+                      //   width: 200,
+                      //   height: 25,
+                      //   child: TextField(
+                      //     style: TextStyle(color: Colors.grey[200]),
+                      //     cursorColor: Colors.white,
+                      //     // showCursor: false,
+                      //     // cursorHeight: 0,
+                      //     // scrollPadding: EdgeInsets.only(top: 20),
+
+                      //     decoration: InputDecoration(
+                      //         contentPadding: EdgeInsets.only(top: 30),
+                      //         border: InputBorder.none,
+                      //         hintText: 'Lacak Paket',
+                      //         hintStyle: TextStyle(color: Colors.grey[300])),
+                      //   ),
+                      // ),
                       Text(
-                        'Lacak Resi',
-                        style: TextStyle(
-                          color: Color.fromRGBO(245, 245, 245, 1),
-                        ),
-                      ),
+                        'Lacak Paket',
+                        style: TextStyle(color: Colors.grey[200]),
+                      )
                     ],
                   ),
                   Icon(
@@ -50,7 +61,7 @@ class SearchItem extends StatelessWidget {
             ),
           ),
           Expanded(
-              flex: 1,
+              flex: 2,
               child: Container(
                 decoration: BoxDecoration(
                   color: const Color.fromARGB(35, 0, 0, 0),
