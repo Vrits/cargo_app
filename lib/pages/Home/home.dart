@@ -16,59 +16,34 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: Colors.blue[700],
-          // currentIndex: _currentIndex,
-          // onTap: _onItemTapped,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Beranda',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.assignment),
-              label: 'Order Saya',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.location_on),
-              label: 'Lacak',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Akun',
-            ),
-          ]),
-      body: SafeArea(
-        child: Container(
-          color: Colors.blue[600],
-          child: Column(children: [
-            SearchItem(),
-            Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(12),
-                        topRight: Radius.circular(12))),
-                width: double.maxFinite,
-                child: ListView(
-                  children: [
-                    PromoLogin(),
-                    FourIcons(),
-                    OneIcons(),
-                    PromoList(),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    OrderPromo(),
-                  ],
-                ),
+    return SafeArea(
+      child: Container(
+        color: Colors.blue[600],
+        child: Column(children: [
+          SearchItem(),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.grey[200],
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(12),
+                      topRight: Radius.circular(12))),
+              width: double.maxFinite,
+              child: ListView(
+                children: [
+                  PromoLogin(),
+                  FourIcons(),
+                  OneIcons(),
+                  PromoList(),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  OrderPromo(),
+                ],
               ),
-            )
-          ]),
-        ),
+            ),
+          )
+        ]),
       ),
     );
   }

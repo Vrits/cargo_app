@@ -14,7 +14,9 @@ class FourIcons extends StatelessWidget {
           Expanded(
               flex: 1,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/pickup');
+                },
                 child: Column(children: [
                   Icon(Icons.car_crash, size: 40),
                   Text('Pick Up')

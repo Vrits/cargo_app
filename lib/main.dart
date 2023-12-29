@@ -1,5 +1,6 @@
+import 'package:cargo_app/pages/Home/navbar.dart';
+import 'package:cargo_app/pages/PickUp/pick_up.dart';
 import 'package:flutter/material.dart';
-import 'package:cargo_app/pages/Home/home.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -13,6 +14,9 @@ void main() {
       )),
     ),
     initialRoute: '/home',
-    routes: {'/home': (context) => Home()},
+    routes: {
+      '/home': (context) => NavBar(),
+      '/pickup': (context) => PickUp(),
+    },
   ));
 }
