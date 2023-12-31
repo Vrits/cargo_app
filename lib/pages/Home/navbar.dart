@@ -13,8 +13,6 @@ class NavBar extends StatefulWidget {
 class _HomeState extends State<NavBar> {
   int _currentIndex = 0;
 
-  List<Widget> pages = [Home(), Home(), PickUp(), LoginPage()];
-
   void _onItemTapped(int index) {
     setState(() {
       _currentIndex = index;
@@ -23,6 +21,12 @@ class _HomeState extends State<NavBar> {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> pages = [
+      Home(onItemTapped: _onItemTapped),
+      Home(onItemTapped: _onItemTapped),
+      Home(onItemTapped: _onItemTapped),
+      LoginPage()
+    ];
     return Scaffold(
         bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,

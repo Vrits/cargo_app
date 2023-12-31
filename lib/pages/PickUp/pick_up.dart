@@ -10,7 +10,7 @@ class PickUp extends StatelessWidget {
         title: Text('Order'),
       ),
       bottomNavigationBar: BottomAppBar(
-          color: Colors.grey[300],
+          color: Colors.grey[100],
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

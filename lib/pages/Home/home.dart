@@ -6,14 +6,11 @@ import 'package:cargo_app/pages/Home/promo_login.dart';
 import 'package:cargo_app/pages/Home/search_bar.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class Home extends StatelessWidget {
+  final Function(int) onItemTapped;
 
-  @override
-  State<Home> createState() => _HomeState();
-}
+  const Home({super.key, required this.onItemTapped});
 
-class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -33,7 +30,7 @@ class _HomeState extends State<Home> {
                 children: [
                   PromoLogin(),
                   FourIcons(),
-                  OneIcons(),
+                  OneIcons(onItemTapped: onItemTapped),
                   PromoList(),
                   SizedBox(
                     height: 16,

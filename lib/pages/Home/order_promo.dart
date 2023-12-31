@@ -11,11 +11,11 @@ class OrderPromo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Ada yang baru dari kami',
+            'Order Sekarang',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           Text(
-            'Yuk pantau info & promo terbaru dari kami',
+            'Pilih layanan yang tersedia dari kami untuk pengirimanmu',
           ),
           SizedBox(
             height: 12,

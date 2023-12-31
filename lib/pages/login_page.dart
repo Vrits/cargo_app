@@ -1,6 +1,8 @@
 import 'package:cargo_app/components/my_button.dart';
 import 'package:cargo_app/components/my_textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 // import 'package:modernlogintute/components/my_button.dart';
 // import 'package:modernlogintute/components/my_textfield.dart';
 // import 'package:modernlogintute/components/square_tile.dart';
@@ -124,17 +126,19 @@ class LoginPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // google button
-                  // SquareTile(imagePath: 'lib/images/google.png'),
-
+                  SvgPicture.asset(
+                    'assets/google.svg',
+                    width: 50,
+                    height: 50,
+                    colorFilter: ColorFilter.mode(
+                        const Color.fromRGBO(30, 136, 229, 1), BlendMode.srcIn),
+                  ),
                   SizedBox(width: 25),
-                  Container(
-                    color: Colors.black,
-                    width: 20,
-                    height: 20,
-                  )
-                  // apple button
-                  // SquareTile(imagePath: 'lib/images/apple.png')
+                  Icon(
+                    Icons.apple,
+                    size: 50,
+                    color: Colors.blue[600],
+                  ),
                 ],
               ),
 
