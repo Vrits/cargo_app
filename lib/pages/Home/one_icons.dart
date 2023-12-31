@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class OneIcons extends StatelessWidget {
   final Function(int) onItemTapped;
 
-  const OneIcons({required this.onItemTapped});
+  const OneIcons({super.key, required this.onItemTapped});
 
   @override
   Widget build(BuildContext context) {

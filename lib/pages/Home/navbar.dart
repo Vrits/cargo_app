@@ -1,4 +1,5 @@
 import 'package:cargo_app/pages/Home/home.dart';
+import 'package:cargo_app/pages/Lacak/Lacak.dart';
 import 'package:cargo_app/pages/PickUp/pick_up.dart';
 import 'package:cargo_app/pages/login_page.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class _HomeState extends State<NavBar> {
     List<Widget> pages = [
       Home(onItemTapped: _onItemTapped),
       Home(onItemTapped: _onItemTapped),
-      Home(onItemTapped: _onItemTapped),
+      Lacak(),
       LoginPage()
     ];
     return Scaffold(

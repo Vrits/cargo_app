@@ -29,7 +29,9 @@ class Home extends StatelessWidget {
               child: ListView(
                 children: [
                   PromoLogin(),
-                  FourIcons(),
+                  FourIcons(
+                    onItemTapped: onItemTapped,
+                  ),
                   OneIcons(onItemTapped: onItemTapped),
                   PromoList(),
                   SizedBox(

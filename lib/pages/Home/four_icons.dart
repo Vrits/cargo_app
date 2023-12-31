@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class FourIcons extends StatelessWidget {
-  const FourIcons({super.key});
+  final Function(int) onItemTapped;
+
+  const FourIcons({super.key, required this.onItemTapped});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,9 @@ class FourIcons extends StatelessWidget {
           Expanded(
               flex: 1,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  onItemTapped(2);
+                },
                 child: Column(children: [
                   Icon(Icons.location_on, size: 40),
                   Text('Lacak')
