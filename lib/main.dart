@@ -1,3 +1,4 @@
+import 'package:cargo_app/pages/Harga/harga.dart';
 import 'package:cargo_app/pages/Home/navbar.dart';
 import 'package:cargo_app/pages/PickUp/pick_up.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ void main() {
     routes: {
       '/home': (context) => NavBar(),
       '/pickup': (context) => PickUp(),
+      '/harga': (context) => Harga(),
     },
   ));
 }

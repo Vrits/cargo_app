@@ -27,7 +27,9 @@ class FourIcons extends StatelessWidget {
           Expanded(
               flex: 1,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/harga');
+                },
                 child: Column(children: [
                   Icon(Icons.price_change_rounded, size: 40),
                   Text('Cek Harga')

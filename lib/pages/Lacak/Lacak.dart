@@ -12,7 +12,7 @@ class _LacakState extends State<Lacak> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('test')),
+      appBar: AppBar(title: Text('Lacak')),
       body: Maps(),
     );
   }

@@ -1,7 +1,6 @@
 import 'package:cargo_app/pages/Home/home.dart';
-import 'package:cargo_app/pages/Lacak/Lacak.dart';
-import 'package:cargo_app/pages/PickUp/pick_up.dart';
-import 'package:cargo_app/pages/login_page.dart';
+import 'package:cargo_app/pages/Lacak/lacak.dart';
+import 'package:cargo_app/pages/Akun/login_page.dart';
 import 'package:flutter/material.dart';
 
 class NavBar extends StatefulWidget {
