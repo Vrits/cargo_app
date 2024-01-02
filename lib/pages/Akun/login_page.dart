@@ -41,7 +41,7 @@ class LoginPage extends StatelessWidget {
 
               // welcome back, you've been missed!
               Text(
-                'Selamat Siang Pizza Anda Sudah Sampai',
+                'Selamat datang, Silahkan masuk dahulu',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.grey[700],
