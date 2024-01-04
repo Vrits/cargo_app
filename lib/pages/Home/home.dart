@@ -28,7 +28,9 @@ class Home extends StatelessWidget {
               width: double.maxFinite,
               child: ListView(
                 children: [
-                  PromoLogin(),
+                  PromoLogin(
+                    onItemTapped: onItemTapped,
+                  ),
                   FourIcons(
                     onItemTapped: onItemTapped,
                   ),

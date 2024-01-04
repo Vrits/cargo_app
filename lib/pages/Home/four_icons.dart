@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class FourIcons extends StatelessWidget {
   final Function(int) onItemTapped;
@@ -20,7 +21,13 @@ class FourIcons extends StatelessWidget {
                   Navigator.pushNamed(context, '/pickup');
                 },
                 child: Column(children: [
-                  Icon(Icons.car_crash, size: 40),
+                  SvgPicture.asset(
+                    'assets/truck.svg',
+                    width: 40,
+                    height: 40,
+                    colorFilter: ColorFilter.mode(
+                        const Color.fromRGBO(30, 136, 229, 1), BlendMode.srcIn),
+                  ),
                   Text('Pick Up')
                 ]),
               )),
@@ -31,7 +38,13 @@ class FourIcons extends StatelessWidget {
                   Navigator.pushNamed(context, '/harga');
                 },
                 child: Column(children: [
-                  Icon(Icons.price_change_rounded, size: 40),
+                  SvgPicture.asset(
+                    'assets/dollar.svg',
+                    width: 40,
+                    height: 40,
+                    colorFilter: ColorFilter.mode(
+                        const Color.fromRGBO(30, 136, 229, 1), BlendMode.srcIn),
+                  ),
                   Text('Cek Harga')
                 ]),
               )),

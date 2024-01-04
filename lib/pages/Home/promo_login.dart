@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class PromoLogin extends StatelessWidget {
-  const PromoLogin({super.key});
+  final Function(int) onItemTapped;
+
+  const PromoLogin({super.key, required this.onItemTapped});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,9 @@ class PromoLogin extends StatelessWidget {
             width: 4,
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              onItemTapped(3);
+            },
             style: ButtonStyle(
                 backgroundColor: MaterialStatePropertyAll<Color>(Colors.blue)),
             child: Text(
