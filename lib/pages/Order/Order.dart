@@ -8,6 +8,15 @@ class Order extends StatefulWidget {
 }
 
 class _OrderState extends State<Order> {
+  List<String> buttonName = [
+    'Semua',
+    'Menunggu Diproses',
+    'Dalam pengiriman',
+    'Diterima',
+    'Retur',
+    'Batal'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,27 +27,39 @@ class _OrderState extends State<Order> {
           child: Column(
         children: [
           Container(
-            height: 40,
+            margin: EdgeInsets.only(top: 8),
+            padding: EdgeInsets.symmetric(horizontal: 8),
+            // margin: EdgeInsets.all(value),
+            height: 45,
             child: ListView(
-              scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                scrollDirection: Axis.horizontal,
+                children: buttonName.map((e) => buttonCategory(e)).toList()),
+          ),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextButton(onPressed: () {}, child: Text('semua')),
-                TextButton(onPressed: () {}, child: Text('Menunggu Diproses')),
-                TextButton(onPressed: () {}, child: Text('Dalam pengiriman')),
-                TextButton(onPressed: () {}, child: Text('Diterima')),
-                TextButton(onPressed: () {}, child: Text('Retur')),
-                TextButton(onPressed: () {}, child: Text('Batal')),
+                Icon(Icons.bolt, size: 100),
+                Text('Tidak Ada Data'),
+                TextButton(onPressed: () {}, child: Text('Refresh')),
               ],
             ),
-          ),
-          Column(
-            children: [
-              Text('Tidak Ada Data'),
-              TextButton(onPressed: () {}, child: Text('Refresh')),
-            ],
           )
         ],
       )),
+    );
+  }
+
+  Container buttonCategory(String name) {
+    return Container(
+      margin: EdgeInsets.only(right: 6),
+      child: TextButton(
+          style: ButtonStyle(
+              side: MaterialStateProperty.all(
+                  BorderSide(color: Colors.blue, width: 2))),
+          onPressed: () {},
+          child: Text('$name')),
     );
   }
 }

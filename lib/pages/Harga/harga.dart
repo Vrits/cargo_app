@@ -28,9 +28,7 @@ class _HargaState extends State<Harga> {
       appBar: AppBar(
         title: Text(
           'Kalkulator Harga Barang',
-          style: TextStyle(color: Colors.grey[200]),
         ),
-        backgroundColor: Colors.blue[600],
       ),
       body: Container(
         color: Colors.grey[200],

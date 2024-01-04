@@ -7,6 +7,11 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
     theme: ThemeData(
+      appBarTheme: AppBarTheme(
+          // color: Colors.grey[200],
+          iconTheme: IconThemeData(color: Colors.grey[200]),
+          titleTextStyle: TextStyle(color: Colors.grey[200], fontSize: 20),
+          backgroundColor: Colors.blue[600]),
       textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
         foregroundColor: MaterialStatePropertyAll<Color>(
@@ -15,7 +20,7 @@ void main() {
             ContinuousRectangleBorder(borderRadius: BorderRadius.circular(12))),
       )),
     ),
-    initialRoute: '/order',
+    initialRoute: '/home',
     routes: {
       '/home': (context) => NavBar(),
       '/pickup': (context) => PickUp(),
