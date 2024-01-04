@@ -62,7 +62,9 @@ class FourIcons extends StatelessWidget {
           Expanded(
               flex: 1,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  onItemTapped(1);
+                },
                 child: Column(children: [
                   Icon(Icons.assignment, size: 40),
                   Text('Order Saya')

@@ -1,6 +1,7 @@
 import 'package:cargo_app/pages/Home/home.dart';
 import 'package:cargo_app/pages/Lacak/lacak.dart';
 import 'package:cargo_app/pages/Akun/login_page.dart';
+import 'package:cargo_app/pages/Order/Order.dart';
 import 'package:flutter/material.dart';
 
 class NavBar extends StatefulWidget {
@@ -23,7 +24,7 @@ class _HomeState extends State<NavBar> {
   Widget build(BuildContext context) {
     List<Widget> pages = [
       Home(onItemTapped: _onItemTapped),
-      Home(onItemTapped: _onItemTapped),
+      Order(),
       Lacak(),
       LoginPage()
     ];
