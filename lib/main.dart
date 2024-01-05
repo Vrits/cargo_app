@@ -20,7 +20,7 @@ void main() {
             ContinuousRectangleBorder(borderRadius: BorderRadius.circular(12))),
       )),
     ),
-    initialRoute: '/order',
+    initialRoute: '/home',
     routes: {
       '/home': (context) => NavBar(),
       '/pickup': (context) => PickUp(),

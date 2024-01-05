@@ -1,6 +1,7 @@
 import 'package:cargo_app/pages/Order/OrderItem.dart';
-import 'package:cargo_app/pages/Order/OderList.dart';
+import 'package:cargo_app/pages/Order/OrderList.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Order extends StatefulWidget {
   const Order({super.key});
@@ -54,16 +55,9 @@ class _OrderState extends State<Order> {
                         buttonName.map((e) => buttonCategory(e)).toList()),
               ),
               Expanded(
-                  child:
-                      // Column(
-                      //   mainAxisAlignment: MainAxisAlignment.center,
-                      //   children: [
-                      //     Icon(Icons.bolt, size: 100),
-                      //     Text('Tidak Ada Data'),
-                      //     TextButton(onPressed: () {}, child: Text('Refresh')),
-                      //   ],
-                      // ),
-                      ListView(
+                  child: filteredItems.length < 1
+                      ? ItemIsEmpty()
+                      : ListView(
                           padding:
                               EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                           children: filteredItems))
@@ -101,6 +95,29 @@ class _OrderState extends State<Order> {
             style: TextStyle(
                 fontWeight: isSelected ? FontWeight.bold : FontWeight.normal),
           )),
+    );
+  }
+}
+
+class ItemIsEmpty extends StatelessWidget {
+  const ItemIsEmpty({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SvgPicture.asset(
+          'assets/stock-out.svg',
+          width: 100,
+          height: 100,
+          colorFilter: ColorFilter.mode(
+              const Color.fromRGBO(30, 136, 229, 1), BlendMode.srcIn),
+        ),
+        Text('Tidak ada paket.'),
+      ],
     );
   }
 }
