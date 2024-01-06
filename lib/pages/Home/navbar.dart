@@ -3,6 +3,7 @@ import 'package:cargo_app/pages/Lacak/lacak.dart';
 import 'package:cargo_app/pages/Akun/login_page.dart';
 import 'package:cargo_app/pages/Order/Order.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -22,6 +23,10 @@ class _HomeState extends State<NavBar> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.blue[600], // Set your desired status bar color
+    ));
+
     List<Widget> pages = [
       Home(onItemTapped: _onItemTapped),
       Order(),
