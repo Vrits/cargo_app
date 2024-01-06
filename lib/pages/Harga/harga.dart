@@ -7,18 +7,24 @@ class Harga extends StatefulWidget {
 
 class _HargaState extends State<Harga> {
   double beratBarang = 1.0;
-  double panjang = 0.0;
-  double lebar = 0.0;
-  double tinggi = 0.0;
-  double jarakDestinasi = 0.0;
-  String hasilOngkir = '';
+  Map<String, double> ukuranBarang = {
+    'panjang': 1.0,
+    'lebar': 1.0,
+    'tinggi': 1.0,
+    'jarak': 1.0,
+  };
+
+  String hasilOngkir = 'Biaya Pengiriman: -';
 
   // Fungsi untuk menghitung ongkir
   double hitungOngkir() {
     // Logika penghitungan ongkir berdasarkan berat, dimensi, dan jarak
     double biayaPengiriman = (beratBarang * 5000) +
-        (panjang * lebar * tinggi * 0.01) +
-        (jarakDestinasi * 1000);
+        (ukuranBarang['panjang']! *
+            ukuranBarang['lebar']! *
+            ukuranBarang['tinggi']! *
+            0.01) +
+        (ukuranBarang['jarak']! * 1000);
     return biayaPengiriman;
   }
 
@@ -34,12 +40,9 @@ class _HargaState extends State<Harga> {
         color: Colors.grey[200],
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: ListView(
-          // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            _buildTextBox('Asal', TextInputType.text),
-            _buildTextBox('Tujuan', TextInputType.text),
-            // _buildTextBox(
-            //     'Perkiraan Jarak Destinasi (km)', TextInputType.number),
+            _buildTextBox('Asal', TextInputType.text, ''),
+            _buildTextBox('Tujuan', TextInputType.text, ''),
             _buildBeratBarang(),
             _buildDimensi(),
             _buildCariButton(),
@@ -49,7 +52,7 @@ class _HargaState extends State<Harga> {
     );
   }
 
-  Widget _buildTextBox(String label, TextInputType type) {
+  Widget _buildTextBox(String label, TextInputType type, String ukuran) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 6),
       child: Column(
@@ -57,19 +60,14 @@ class _HargaState extends State<Harga> {
         children: [
           Container(margin: EdgeInsets.only(bottom: 4), child: Text(label)),
           TextField(
-            // style: TextStyle(color: Colors.white), // Warna teks input
             decoration: InputDecoration(
               border: OutlineInputBorder(),
-              // labelText: label,
-              // hintText: hintText,
-              // labelStyle: TextStyle(color: Colors.white), // Warna label
-              // hintStyle: TextStyle(color: Colors.white70), // Warna hint
             ),
             keyboardType: type,
             onChanged: (value) {
               setState(() {
-                if (double.tryParse(value) != null) {
-                  jarakDestinasi = double.parse(value);
+                if ((double.tryParse(value) != null) && (ukuran != '')) {
+                  ukuranBarang['$ukuran'] = double.parse(value);
                 }
               });
             },
@@ -122,9 +120,6 @@ class _HargaState extends State<Harga> {
                 Icons.add,
                 color: Colors.grey[200],
               ),
-              // style: ElevatedButton.styleFrom(
-              //   primary: Colors.blue, // Warna tombol
-              // ),
             ),
             SizedBox(width: 8),
             TextButton(
@@ -139,9 +134,6 @@ class _HargaState extends State<Harga> {
                 });
               },
               child: Icon(Icons.remove, color: Colors.grey[200]),
-              // style: ElevatedButton.styleFrom(
-              //   primary: Colors.blue, // Warna tombol
-              // ),
             ),
             SizedBox(width: 8),
             TextButton(
@@ -154,9 +146,6 @@ class _HargaState extends State<Harga> {
                 });
               },
               child: Text('Reset', style: TextStyle(color: Colors.grey[200])),
-              // style: ElevatedButton.styleFrom(
-              //   primary: Colors.blue, // Warna tombol
-              // ),
             ),
           ],
         ),
@@ -167,16 +156,21 @@ class _HargaState extends State<Harga> {
   Widget _buildDimensi() {
     return Row(
       children: [
-        Expanded(child: _buildTextBox('Jarak (km)', TextInputType.number)),
+        Expanded(
+            child: _buildTextBox('Jarak (km)', TextInputType.number, 'jarak')),
         Expanded(
             child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 4),
-                child: _buildTextBox('Panjang (cm)', TextInputType.number))),
+                child: _buildTextBox(
+                    'Panjang (cm)', TextInputType.number, 'panjang'))),
         Expanded(
             child: Container(
                 margin: EdgeInsets.only(right: 4),
-                child: _buildTextBox('Lebar (cm)', TextInputType.number))),
-        Expanded(child: _buildTextBox('Tinggi (cm)', TextInputType.number)),
+                child: _buildTextBox(
+                    'Lebar (cm)', TextInputType.number, 'lebar'))),
+        Expanded(
+            child:
+                _buildTextBox('Tinggi (cm)', TextInputType.number, 'tinggi')),
       ],
     );
   }
@@ -185,6 +179,18 @@ class _HargaState extends State<Harga> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        Container(
+          margin: EdgeInsets.symmetric(vertical: 8),
+          child: Text(
+            hasilOngkir,
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              // color: Colors.white
+            ),
+            // Warna teks hasil
+          ),
+        ),
         TextButton(
           style: ButtonStyle(
               backgroundColor: MaterialStatePropertyAll<Color>(
@@ -200,20 +206,8 @@ class _HargaState extends State<Harga> {
           },
           child:
               Text('Hitung Ongkir', style: TextStyle(color: Colors.grey[200])),
-          // style: ElevatedButton.styleFrom(
-          //   primary: Colors.blue, // Warna tombol
-          // ),
         ),
         SizedBox(height: 16),
-        Text(
-          hasilOngkir,
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-            // color: Colors.white
-          ),
-          // Warna teks hasil
-        ),
       ],
     );
   }
