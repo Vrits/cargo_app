@@ -33,9 +33,7 @@ class OrderPromo extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image(
-                        height: 100,
-                        image: NetworkImage(
-                            "https://source.unsplash.com/random/700x500/?city")),
+                        height: 100, image: AssetImage('assets/img/ads.jpeg')),
                   ),
                 ),
                 Container(
@@ -46,9 +44,7 @@ class OrderPromo extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image(
-                        height: 100,
-                        image: NetworkImage(
-                            "https://source.unsplash.com/random/700x500/?city")),
+                        height: 100, image: AssetImage('assets/img/ads.jpeg')),
                   ),
                 ),
                 Container(
@@ -59,9 +55,7 @@ class OrderPromo extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image(
-                        height: 100,
-                        image: NetworkImage(
-                            "https://source.unsplash.com/random/700x500/?city")),
+                        height: 100, image: AssetImage('assets/img/ads.jpeg')),
                   ),
                 ),
                 Container(
@@ -71,9 +65,7 @@ class OrderPromo extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image(
-                        height: 100,
-                        image: NetworkImage(
-                            "https://source.unsplash.com/random/700x500/?city")),
+                        height: 100, image: AssetImage('assets/img/ads.jpeg')),
                   ),
                 )
               ],

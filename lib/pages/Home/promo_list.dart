@@ -35,8 +35,7 @@ class PromoList extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     child: Image(
                         height: 100,
-                        image: NetworkImage(
-                            "https://images.tokopedia.net/img/cache/730/kjjBfF/2021/6/14/658ede0f-7236-425e-bef3-a498a6c14912.jpg")),
+                        image: AssetImage('assets/img/ads-wide.jpg')),
                   ),
                 ),
                 Container(
@@ -48,8 +47,7 @@ class PromoList extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     child: Image(
                         height: 100,
-                        image: NetworkImage(
-                            "https://images.tokopedia.net/img/cache/730/kjjBfF/2021/6/14/658ede0f-7236-425e-bef3-a498a6c14912.jpg")),
+                        image: AssetImage('assets/img/ads-wide.jpg')),
                   ),
                 ),
                 Container(
@@ -61,8 +59,7 @@ class PromoList extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     child: Image(
                         height: 100,
-                        image: NetworkImage(
-                            "https://images.tokopedia.net/img/cache/730/kjjBfF/2021/6/14/658ede0f-7236-425e-bef3-a498a6c14912.jpg")),
+                        image: AssetImage('assets/img/ads-wide.jpg')),
                   ),
                 ),
                 Container(
@@ -73,8 +70,7 @@ class PromoList extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     child: Image(
                         height: 100,
-                        image: NetworkImage(
-                            "https://images.tokopedia.net/img/cache/730/kjjBfF/2021/6/14/658ede0f-7236-425e-bef3-a498a6c14912.jpg")),
+                        image: AssetImage('assets/img/ads-wide.jpg')),
                   ),
                 )
               ],
