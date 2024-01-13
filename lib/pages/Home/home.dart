@@ -6,11 +6,17 @@ import 'package:cargo_app/pages/Home/promo_login.dart';
 import 'package:cargo_app/pages/Home/search_bar.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  final bool isLoggedIn;
   final Function(int) onItemTapped;
 
-  const Home({super.key, required this.onItemTapped});
+  const Home({super.key, required this.onItemTapped, required this.isLoggedIn});
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -28,13 +34,17 @@ class Home extends StatelessWidget {
               width: double.maxFinite,
               child: ListView(
                 children: [
-                  PromoLogin(
-                    onItemTapped: onItemTapped,
-                  ),
+                  !widget.isLoggedIn
+                      ? PromoLogin(
+                          onItemTapped: widget.onItemTapped,
+                        )
+                      : SizedBox(
+                          height: 8,
+                        ),
                   FourIcons(
-                    onItemTapped: onItemTapped,
+                    onItemTapped: widget.onItemTapped,
                   ),
-                  OneIcons(onItemTapped: onItemTapped),
+                  OneIcons(onItemTapped: widget.onItemTapped),
                   PromoList(),
                   SizedBox(
                     height: 16,

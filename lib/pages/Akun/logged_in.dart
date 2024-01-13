@@ -45,7 +45,6 @@ class LoggedIn extends StatelessWidget {
               height: 24,
             ),
             AccountButton('Detail Akun'),
-            // Text('Detail Akun'),
             AccountButton('Riwayat Pesanan'),
             AccountButton('Ganti Username'),
             AccountButton('Ganti Kata Sandi'),
@@ -60,11 +59,14 @@ class LoggedIn extends StatelessWidget {
                           backgroundColor:
                               MaterialStatePropertyAll<Color>(Colors.red)),
                       onPressed: () {},
-                      child: Text(
-                        'Delete Account',
-                        style: TextStyle(
-                            color: Colors.grey[200],
-                            fontWeight: FontWeight.bold),
+                      child: Container(
+                        padding: EdgeInsets.symmetric(vertical: 12),
+                        child: Text(
+                          'Hapus Akun',
+                          style: TextStyle(
+                              color: Colors.grey[200],
+                              fontWeight: FontWeight.bold),
+                        ),
                       )),
                 ),
                 SizedBox(
@@ -88,10 +90,13 @@ class LoggedIn extends StatelessWidget {
                       onPressed: () {
                         loginHandler(false);
                       },
-                      child: Text(
-                        'Logout',
-                        style: TextStyle(
-                            color: Colors.red, fontWeight: FontWeight.bold),
+                      child: Container(
+                        padding: EdgeInsets.symmetric(vertical: 12),
+                        child: Text(
+                          'Keluar',
+                          style: TextStyle(
+                              color: Colors.red, fontWeight: FontWeight.bold),
+                        ),
                       )),
                 ),
               ],

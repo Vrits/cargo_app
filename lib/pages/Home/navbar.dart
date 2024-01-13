@@ -14,10 +14,17 @@ class NavBar extends StatefulWidget {
 
 class _HomeState extends State<NavBar> {
   int _currentIndex = 0;
+  bool isLoggedIn = false;
 
   void _onItemTapped(int index) {
     setState(() {
       _currentIndex = index;
+    });
+  }
+
+  void loginHandler(bool status) {
+    setState(() {
+      isLoggedIn = status;
     });
   }
 
@@ -28,10 +35,13 @@ class _HomeState extends State<NavBar> {
     ));
 
     List<Widget> pages = [
-      Home(onItemTapped: _onItemTapped),
+      Home(onItemTapped: _onItemTapped, isLoggedIn: isLoggedIn),
       Order(),
       Lacak(),
-      Account()
+      Account(
+        isLoggedIn: isLoggedIn,
+        loginHandler: loginHandler,
+      )
     ];
     return Scaffold(
         bottomNavigationBar: BottomNavigationBar(
