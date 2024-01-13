@@ -14,6 +14,8 @@ void main() {
           backgroundColor: Colors.blue[600]),
       textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
+        overlayColor: MaterialStateProperty.all<Color>(
+            const Color.fromARGB(50, 25, 118, 210)),
         foregroundColor: MaterialStatePropertyAll<Color>(
             const Color.fromRGBO(30, 136, 229, 1)),
         shape: MaterialStatePropertyAll<ContinuousRectangleBorder>(

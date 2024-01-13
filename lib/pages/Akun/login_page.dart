@@ -8,14 +8,22 @@ import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:modernlogintute/components/square_tile.dart';
 
 class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+  final Function(bool) loginHandler;
+  final Function(String) changeUsername;
+
+  LoginPage(
+      {super.key, required this.loginHandler, required this.changeUsername});
 
   // text editing controllers
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
   // sign user in method
-  void signUserIn() {}
+  void signUserIn() {
+    loginHandler(true);
+    // print(usernameController.text);
+    changeUsername(usernameController.text);
+  }
 
   @override
   Widget build(BuildContext context) {

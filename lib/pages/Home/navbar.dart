@@ -1,6 +1,6 @@
+import 'package:cargo_app/pages/Akun/account.dart';
 import 'package:cargo_app/pages/Home/home.dart';
 import 'package:cargo_app/pages/Lacak/lacak.dart';
-import 'package:cargo_app/pages/Akun/login_page.dart';
 import 'package:cargo_app/pages/Order/Order.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -31,7 +31,7 @@ class _HomeState extends State<NavBar> {
       Home(onItemTapped: _onItemTapped),
       Order(),
       Lacak(),
-      LoginPage()
+      Account()
     ];
     return Scaffold(
         bottomNavigationBar: BottomNavigationBar(
