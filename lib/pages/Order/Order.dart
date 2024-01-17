@@ -22,16 +22,24 @@ class _OrderState extends State<Order> {
     'Batal'
   ];
 
+  void filterId(String id) {
+    setState(() {
+      filterList(id);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     List<Widget> filteredItems = itemsList
         .where((e) => (status == 'Semua') || (e['status'] == '$status'))
         .map((e) => OrderItem(
-            status: e['status']!,
-            id: e['id']!,
-            from: e['from']!,
-            date_estimation: e['date_estimation']!,
-            to: e['to']!))
+              status: e['status']!,
+              id: e['id']!,
+              from: e['from']!,
+              date_estimation: e['date_estimation']!,
+              to: e['to']!,
+              filterList: filterId,
+            ))
         .toList();
 
     return Scaffold(

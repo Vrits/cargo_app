@@ -6,14 +6,17 @@ class OrderItem extends StatelessWidget {
   final String from;
   final String to;
   final String date_estimation;
+  final Function(String) filterList;
 
-  OrderItem(
-      {super.key,
-      required this.status,
-      required this.id,
-      required this.from,
-      required this.date_estimation,
-      required this.to});
+  OrderItem({
+    super.key,
+    required this.status,
+    required this.id,
+    required this.from,
+    required this.date_estimation,
+    required this.to,
+    required this.filterList,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +59,17 @@ class OrderItem extends StatelessWidget {
                 Text('Estimasi $date_estimation'),
               ],
             ),
-          )
+          ),
+          TextButton(
+              onPressed: () {
+                filterList(id);
+              },
+              child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 12),
+                  child: Icon(
+                    Icons.delete_outline,
+                    size: 32,
+                  )))
         ],
       ),
     );
